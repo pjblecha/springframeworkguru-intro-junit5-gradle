@@ -5,12 +5,16 @@ plugins {
 group 'guru.springframework'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter-api:6.0.0-M2')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:6.0.0-M2')
+    testRuntimeOnly('org.junit.platform:junit-platform-launcher:6.0.0-M2')
+}
 
+test {
+    useJUnitPlatform()
 }
